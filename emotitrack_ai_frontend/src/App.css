@@ -1,0 +1,323 @@
+:root {
+  --primary: #cce8b5;
+  --secondary: #ffd9a8;
+  --accent: #ffb5af;
+  --bg: #f5f6f8;
+  --soft-border: rgba(80,80,80,0.07);
+  --nav-height: 60px;
+  --main-width: 420px;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  color: #23231f;
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.et-app {
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* NAVIGATION */
+.et-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: var(--nav-height);
+  z-index: 100;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--soft-border);
+  box-shadow: 0 1px 8px -6px #b7cac5;
+}
+
+.et-logo {
+  color: #233310;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.et-nav-items {
+  display: flex;
+  gap: 4px;
+}
+
+.et-nav-btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: #3d3d26;
+  font-size: 1rem;
+  padding: 7px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.et-nav-btn.active,
+.et-nav-btn:hover {
+  background: var(--secondary);
+  color: #643d1b;
+}
+
+.et-user-mini {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 6px;
+}
+
+.et-logout-btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: filter 0.1s;
+}
+.et-logout-btn:hover { filter: brightness(0.9); }
+ 
+/* MAIN */
+.et-main {
+  margin: 0 auto;
+  padding-top: 32px;
+  max-width: var(--main-width);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.et-section,
+.et-dashboard {
+  background: #fff;
+  margin: 24px 0 0 0;
+  border-radius: 14px;
+  padding: 36px 24px;
+  box-shadow: 0 4px 30px 0 rgba(136,143,111,0.07);
+}
+
+h2,h4 { font-family: inherit; color: #34381e; }
+
+.et-stats-cards {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
+.et-card {
+  flex: 1 1 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 9px #d0ddb67a;
+  padding: 18px 11px;
+  min-width: 80px;
+  font-size: 1.04rem;
+  background: #e6efde;
+  color: #212422;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.et-primary { background: var(--primary); }
+.et-secondary { background: var(--secondary);}
+.et-accent { background: var(--accent);}
+
+.et-card strong { font-size: 1.7rem; margin-top: 2px; color: #222; }
+
+.et-dashboard-rows {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.et-dashboard-rows > div {
+  flex: 1 1 0;
+  min-width: 180px;
+}
+
+/* Form Styles */
+.et-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.et-input, .et-form select, .et-form textarea {
+  border-radius: 6px;
+  border: 1px solid var(--soft-border);
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #fafcf9;
+  outline: none;
+  color: #22271b;
+  font-family: inherit;
+}
+
+.et-form textarea {
+  resize: none;
+  min-width: 180px;
+  max-width: 320px;
+}
+
+/* Buttons */
+.et-btn, .et-habit-delete, .et-goal-btn {
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 7px;
+  padding: 8px 18px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: background 0.12s, color 0.12s, filter 0.1s;
+}
+.et-btn {
+  font-weight: 600;
+  background: var(--secondary);
+  color: #73291f;
+}
+.et-btn:hover { filter: brightness(0.965);}
+.et-primary-bg { background: var(--primary); color: #182c0a;}
+.et-secondary-bg { background: var(--secondary); color: #5a3417;}
+.et-accent-bg { background: var(--accent); color: #63313d;}
+
+.et-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.et-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0efd9;
+  font-size: 1.08rem;
+}
+.et-list-item:last-child { border-bottom: none; }
+
+.et-habit-delete {
+  margin-left: 10px;
+  background: #fff;
+  color: #af2f2f;
+  border: 1px solid #ffd5c9;
+  padding: 1px 9px;
+  font-size: 1.2rem;
+}
+.et-habit-delete:hover { background: #fcdcdc;}
+
+.et-habit-freq {
+  color: #8aa155;
+  font-size: 0.98rem;
+  margin: 0 8px;
+}
+
+.et-mood-options {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+.et-mood-btn {
+  font-size: 1.7rem;
+  border: 1.7px solid transparent;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px 8px;
+  transition: border 0.16s, background 0.15s;
+  cursor: pointer;
+}
+.et-mood-btn.selected,
+.et-mood-btn:hover {
+  border-color: var(--primary);
+  background: var(--secondary);
+}
+
+.et-mood-display {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fcfcfc;
+  border-radius: 8px;
+  border: 1px solid #ededed;
+  padding: 10px 16px;
+  margin-top: 6px;
+  min-width: 110px;
+}
+
+.et-mood-notes {
+  margin-left: 16px;
+  color: #8e8e80;
+  font-size: 0.95rem;
+}
+
+.et-goal-progress {
+  color: #9a9; 
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.et-progress {
+  width: 36%;
+  height: 10px;
+  margin: 0 12px;
+}
+
+.et-goal-btn {
+  background: var(--primary);
+  color: #333;
+  font-size: 1rem;
+  padding: 5px 16px;
+  margin-left: 10px;
+}
+.et-goal-btn:disabled { filter: grayscale(1) brightness(1.1); color: #aaa; }
+
+.et-profile-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #f7ffef;
+  border-radius: 11px;
+  padding: 1.2rem 2rem;
+  margin-top: 18px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 10px #b3ea8a14;
+}
+.et-avatar {
+  font-size: 2.7rem;
+  background: #ddeace;
+  color: #545c42;
+  border-radius: 50%;
+  padding: 10px 15px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Challenge Styles */
+.et-challenge-reward {
+  margin-left: 12px;
+  color: #cc6666;
+  font-size: 0.95rem;
+}
+
+.et-login-section {
+  display: flex;
+  min-height: 75vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.et-login-info { color: #909050; font-size: 1rem; margin-top: 1.2rem;}
